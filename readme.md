@@ -18,6 +18,11 @@ The winners are displayed on the page Winners.
 2. Run `npm install` to install all the dependencies
 3. Run `npm run start` to start the app in the development mode
 
+## Stack used
+- Typescript
+- Fetch API
+- webpack, eslint
+
 ## Deployed version
 
 You can find the deployed app here: https://mlatysheva.github.io/async-race/
