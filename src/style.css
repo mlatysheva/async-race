@@ -1,0 +1,248 @@
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+html {
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 5px;
+  font-size: 16px;
+}
+
+body {
+  background-color: black;
+  color: white;
+  margin: 0 auto;
+  padding: 2rem 2rem;
+  overflow-x: hidden;
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 2rem;
+  max-width: 400px;
+}
+
+.button {
+  width: 5rem;
+  height: 2rem;
+  border-radius: 10px;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  cursor: pointer;
+  border: none;
+  margin: 2px;
+  background-color: gainsboro;
+}
+.button:hover {
+  font-size: larger;
+  color:rgb(38, 4, 160);
+  animation: glow 1s ease-in-out infinite alternate;
+  box-shadow: 0 0 10px 0px rgb(158, 231, 197), 0 0 10px 3px rgb(72, 185, 132), 0px 0px 10px 0px rgb(158, 231, 197);
+}
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #07ee8e, 0 0 40px #07ee8e, 0 0 50px #07ee8e, 0 0 60px #07ee8e, 0 0 70px #07ee8e;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #173d2d, 0 0 40px #173d2d, 0 0 50px #173d2d, 0 0 60px #173d2d, 0 0 70px #173d2d, 0 0 80px #173d2d;
+  }
+}
+
+.link-button {
+  width: 10rem;
+  height: 3rem;
+  margin: 1rem 0;
+  font-weight: 400;
+  letter-spacing: 5px;
+}
+
+.garage-link-button {
+  margin-right: 1rem;
+}
+
+.form {
+  max-width: 400px;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+input[type="text"] {
+  appearance: none;
+}
+.input {
+  width: 250px;
+  height: 2rem;
+  font-size: 16px;
+  padding-left: 1rem;
+  margin-right: 1rem;
+  border-radius: 5px;
+}
+
+input[type="color"] {
+  appearance: none;
+}
+.color {
+  width: 3rem;
+  height: 2rem;
+  margin-right: 1rem;
+  border-radius: 5px;
+}
+
+.race-controls {
+  max-width: 400px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.generate-car-button {
+  width: 9rem;
+}
+.race-button, .reset-button {
+  width: 7rem;
+}
+.race-button:hover {
+  font-size: larger;
+  color:rgb(138, 16, 16);
+  box-shadow: 0 0 30px 0px rgb(248, 7, 3), 0 0 30px 10px rgb(248, 7, 3), 0px 0px 30px 0px rgb(248, 7, 3);
+}
+
+.garage-section {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.active {
+  display: block;
+}
+.inactive {
+  display: none;
+}
+
+.car-controls, .car-flag {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.delete-button {
+  z-index: 10;
+}
+.car-name {
+  padding-left: 1rem;
+}
+.car {
+  position: absolute;
+  left: 122px;
+  align-self: flex-end;
+}
+.car.active {
+  -webkit-box-shadow: 0 8px 6px -6px rgb(203, 248, 203);
+      -moz-box-shadow: 0 8px 6px -6px rgb(203, 248, 203);
+          box-shadow: 0 10px 7px -6px rgb(203, 248, 203);
+}
+
+.flag {
+  margin-left: auto;
+  margin-right: 100px;
+  align-self: flex-end;
+  width: 2rem;
+  height: 2rem;
+  background-image: url(./assets/flag.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  filter: invert(12%) sepia(79%) saturate(7177%) hue-rotate(359deg) brightness(100%) contrast(108%);
+}
+
+.road {
+  width: 100%;
+  border-bottom: 2px dashed #ff0000;
+  margin-bottom: 1.5rem;
+}
+.engine-button {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+.engine-button:hover {
+  animation: glow 1s ease-in-out infinite alternate;
+  box-shadow: 0 0 10px 0px rgb(158, 231, 197), 0 0 10px 3px rgb(72, 185, 132), 0px 0px 10px 0px rgb(158, 231, 197);
+}
+.stop-engine-button {
+  margin-right: 1.5rem;
+}
+.pagination {
+  margin-top: 1.5rem;
+}
+
+/* winners section */
+
+table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  border: 2px solid red;
+  align-content: center;
+}
+
+thead th:nth-child(1) {
+  width: 20%;
+}
+thead th:nth-child(2) {
+  width: 20%;
+}
+thead th:nth-child(3) {
+  width: 20%;
+}
+thead th:nth-child(4) {
+  width: 20%;
+}
+thead th:nth-child(5) {
+  width: 20%;
+}
+
+th, td {
+  padding: 1rem;
+  border-bottom: 1px solid red;
+}
+th {
+  letter-spacing: 2px;
+}
+
+td {
+  letter-spacing: 1px;
+}
+
+tbody td {
+  text-align: center;
+}
+.table-button {
+  cursor: pointer;
+}
+
+.winner-banner {
+  width: 60%;
+  font-size: larger;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-transform: uppercase;
+  color: #fff;
+  text-align: center;
+  animation: glow-red 1s ease-in-out infinite alternate;
+}
+
+@keyframes glow-red {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+}
