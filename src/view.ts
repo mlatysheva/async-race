@@ -3,7 +3,6 @@ import { getCars, getWinners, storedInfo } from "./api";
 import { renderRandomCars } from "./garageManipulations";
 import { updatePagination, viewNextPage, viewPrevPage } from "./pagination";
 import { updateViewInSS } from "./localStorage";
-import { WINNERS_PER_PAGE } from "./constants";
 
 function toggleView (view1: HTMLElement, view2: HTMLElement, activeClass: string, inactiveClass: string) {
   if (!view1.classList.contains(activeClass)) {
@@ -100,7 +99,7 @@ export function renderCar (id: number, name: string, color: string, isEngineStar
 }
 
 export async function renderGarage(carPage: number) {
-  const {items, count } = await getCars(carPage);
+  const { items, count } = await getCars(carPage);
   storedInfo.cars = items;
   if (count != null) {
     storedInfo.carsCount = parseInt(count);
@@ -152,7 +151,28 @@ export async function renderWinnersCount() {
 }
 
 export async function renderApp() {
-  const main = document.createElement('main');  
+  const main = document.createElement('main');
+  main.innerHTML = `<div id="Loading">Loading...</div>`;
+
+  const spinnerHTML = `
+    <div class="lds-spinner">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  `;
+  main.innerHTML = spinnerHTML;
+  document.body.appendChild(main);
+  
   storedInfo.winnersCount = storedInfo.winners.length;
   const html = `
     <div class="nav">
@@ -184,9 +204,7 @@ export async function renderApp() {
     </div>
     <div class="view inactive winners-section" id="winners-view">
       <h1>Winners (<span id="winners-count">${storedInfo.winnersCount}</span>)</h1>
-      <h2>Page #<span id="winners-page">${storedInfo.winnersPage}</span></h2>
-      
-      
+      <h2>Page #<span id="winners-page">${storedInfo.winnersPage}</span></h2>          
 
       <table class="table" id="winners-table" cellspacing="0" border="0" cellpadding="0">
       <thead>
