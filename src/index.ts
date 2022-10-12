@@ -16,12 +16,10 @@ var waiting = setInterval(() => {
   const viewBtns = document.querySelectorAll('.link-button');
   if (viewBtns.length > 0) {
     clearInterval(waiting);
-    if (viewBtns.length > 0) {
-      viewBtns.forEach((btn) => {
-        btn.addEventListener('click', async() => {
-          updatePagination();
-        })
+    viewBtns.forEach((btn) => {
+      btn.addEventListener('click', async() => {
+        updatePagination();
       })
-    }
+    })
   }  
 })
